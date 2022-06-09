@@ -1,0 +1,19 @@
+h1{
+    background-color: blue;
+}
+
+.text-color-red{
+    color: red;
+}
+
+#text-color-pink{
+    color:pink
+}
+
+@media only screen and (max-width:600px) {
+    h1{
+        background-color: orange
+    }
+}
+
+
