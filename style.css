@@ -1,22 +1,5 @@
 .header{
     background-color: black;
+
 }
 
-.hero-text{
-    padding: 10% 0;
-}
-
-.hero-text .btn{
-    margin: auto;
-    width: 50%;
-   
-    padding: 10px;
-}
-.hero-image{
-    width: 600px;
-    height: 512px;
-}
-
-.card-img-top{
-    height: 250px;
-}
