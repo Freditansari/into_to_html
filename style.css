@@ -1,7 +1,13 @@
-h1{
+.blue-background{
     background-color: blue;
+    height: 350px;
+    width: 100%;
 }
 
+.col{
+    background-color: grey;
+    border: 10px solid red;
+}
 .text-color-red{
     color: red;
 }
