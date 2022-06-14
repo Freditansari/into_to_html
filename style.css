@@ -1,25 +1,3 @@
-.blue-background{
-    background-color: blue;
-    height: 350px;
-    width: 100%;
+.header{
+    background-color: black;
 }
-
-.col{
-    background-color: grey;
-    border: 10px solid red;
-}
-.text-color-red{
-    color: red;
-}
-
-#text-color-pink{
-    color:pink
-}
-
-@media only screen and (max-width:600px) {
-    h1{
-        background-color: orange
-    }
-}
-
-
