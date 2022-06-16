@@ -64,10 +64,20 @@ let deleteTodo = (id) =>{
         deleted: true,
         ...todoItems[index]
       };
-      console.log(todoItems)
+    //   console.log(todoItems)
       todoItems = todoItems.filter(item => item.id !== Number(id));
      renderTodo(todo)
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ref = localStorage.getItem('todoItemsRef');
+    if (ref) {
+      todoItems = JSON.parse(ref);
+      todoItems.forEach(t => {
+        renderTodo(t);
+      });
+    }
+  });
 
 
 
