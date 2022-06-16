@@ -1,13 +1,17 @@
 let todoItems =[]
 
 let renderTodo =(todo) =>{
+    localStorage.setItem('todoItemsRef', JSON.stringify(todoItems));
     const list = document.getElementById('todoList')
     let tag = document.createElement('li');
 
     const item = document.querySelector(`[data-key='${todo.id}']`);
     
-
     let isChecked
+    if(todo.deleted){
+        item.remove(todo)
+        return
+    }
 
     if(todo.checked){
         isChecked= 'text-decoration-line-through'
@@ -20,6 +24,9 @@ let renderTodo =(todo) =>{
     tag.innerHTML=`
         <input id="${todo.id}" onclick="toggleDone(${todo.id})" type="checkbox"/>
         <span>${todo.task}</span>
+
+        <i class="bi bi-x" onclick="deleteTodo(${todo.id})"></i>
+
     `
 
     if(item){
@@ -49,6 +56,17 @@ let toggleDone = (id) =>{
     todoItems[index].checked = true;
     // console.log(todoItems)
     renderTodo(todoItems[index])
+}
+
+let deleteTodo = (id) =>{
+    const index = todoItems.findIndex(item => item.id === Number(id))
+    const todo = {
+        deleted: true,
+        ...todoItems[index]
+      };
+      console.log(todoItems)
+      todoItems = todoItems.filter(item => item.id !== Number(id));
+     renderTodo(todo)
 }
 
 
